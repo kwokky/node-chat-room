@@ -7,7 +7,7 @@ const { formatDate } = require('./utils/util');
 
 let users = {};
 
-app.use('/', express.static(__dirname + '/www'));
+app.use(express.static(__dirname + '/www'));
 
 io.on('connection', socket => {
   socket.on('online', ({ nickname }) => {
@@ -36,8 +36,6 @@ io.on('connection', socket => {
   })
 
 });
-
-
 
 http.listen(3000, () =>  {
   console.log('server start at 3000');

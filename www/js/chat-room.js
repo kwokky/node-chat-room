@@ -1,4 +1,6 @@
-const socket = io().connect('http://127.0.0.1');
+// const hostname = window.location.hostname;
+// const socket = io(`ws://${hostname}`, {path: '/room/socket.io'}); // 服务器部署路径
+const socket = io(`ws://127.0.0.1:3000`,);
 
 new Vue({
   el: '#app',
