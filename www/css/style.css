@@ -1,0 +1,79 @@
+.container {
+    width: 60%;
+    margin: 50px auto 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.main {
+    height: 60vh;
+    border: 1px solid #e5e5e5;
+}
+
+.main::-webkit-scrollbar, .online-person::-webkit-scrollbar {
+    display: none
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.row:last-of-type {
+    margin-bottom: 0;
+}
+
+.room-tap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.tap-time {
+    font-size: 13px;
+    color: #504f4f;
+    margin-bottom: 5px;
+}
+
+.tap-message {
+    font-size: 13px;
+    color: #fff;
+    background: #bab8b8;
+    border-radius: 15px;
+    padding: 2px 10px;
+}
+
+.nickname {
+    font-size: 13px;
+    color: #4086B1;
+}
+
+.content {
+    font-size: 15px;
+}
+
+.online-person {
+    margin-left: 10px;
+    height: 60vh;
+    width: 200px;
+}
+
+.online-person > p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.overflow-ellipsis {
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[v-cloak]{
+    display: none;
+}

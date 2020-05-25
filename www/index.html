@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js Chat Room</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/element-ui.min.css">
+</head>
+<body>
+<div id="app" v-cloak>
+    <el-container class="container" v-loading="loading">
+        <el-header class="header">Node.js Chat Room</el-header>
+        <el-card>
+            <el-container>
+                <el-main class="main">
+                    <template v-for="item in message">
+                        <el-row class="row" v-if="item.type === 'message'">
+                            <el-col :span="24">
+                                <span class="nickname">{{ item.nickname }} {{ item.time }}</span>
+                            </el-col>
+                            <el-col :span="24">
+                                <span class="content">{{ item.content }}</span>
+                            </el-col>
+                        </el-row>
+
+                        <el-row class="row room-tap" v-if="item.type === 'online' || item.type === 'leave' ">
+                            <span class="tap-time">{{ item.time }}</span>
+                            <span class="tap-message">{{ item.nickname }}{{ item.content }}</span>
+                        </el-row>
+                    </template>
+
+                </el-main>
+                <el-aside class="online-person">
+                    <h3>在线人员（{{ online.length }}）</h3>
+                    <p class="overflow-ellipsis" v-for="item in online">
+                        {{ item.nickname }}</p>
+                </el-aside>
+
+            </el-container>
+            <el-row class="row" style="margin-top: 10px">
+                <el-col :span="19" style="display: flex">
+                    <el-input
+                            placeholder="请输入内容..."
+                            v-model="content"
+                            @keyup.enter.native="sendMessage"
+                    >
+                        <template slot="append">按Enter发送</template>
+                    </el-input>
+                </el-col>
+            </el-row>
+        </el-card>
+    </el-container>
+</div>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="./js/vue.min.js"></script>
+<script src="./js/element-ui.min.js"></script>
+<script src="./js/chat-room.js"></script>
+</html>
