@@ -36,11 +36,26 @@ $ npm install
 $ npm run dev
 ```
 
-打开 http://localhost:3000查看
+打开 http://localhost:3000 查看
 
 
 
 ## 服务器部署
+
+[forever](https://github.com/foreversd/forever) 是一个Node启动器，可以让Node服务以守护进程的方式运行
+
+```bash
+# 全局安装forever
+$ npm install -g forever
+
+# 进入项目路径
+$ cd /path/to/your/chat-room
+
+# 启动服务
+$ forever start ./app.js
+```
+
+
 
 修改nginx配置
 
